@@ -1,0 +1,7 @@
+abstract public class FormaGeometrica {
+  public FormaGeometrica() {
+
+  }
+  abstract public double area();
+}
+
