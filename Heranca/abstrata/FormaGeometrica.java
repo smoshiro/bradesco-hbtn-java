@@ -1,4 +1,4 @@
-abstract public class FormaGeometrica {
+public abstract class FormaGeometrica {
   public FormaGeometrica() {
 
   }
