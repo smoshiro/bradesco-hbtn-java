@@ -44,7 +44,7 @@ public class ContaBancariaBasica {
 
     public double calcularJurosMensal() {
         return saldo > 0
-                //? saldo * Math.pow(taxaJurosAnual, 1.0 / 12) / 100
+                //? saldo * (Math.pow(1 + taxaJurosAnual/100, 1.0 / 12) - 1)
                 ? saldo * taxaJurosAnual / 12 / 100
                 : 0;
     }
