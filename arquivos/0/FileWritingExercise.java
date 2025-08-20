@@ -15,8 +15,11 @@ public class FileWritingExercise {
 
         // implemente o codigo aqui
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
-            String line;
-            while (!"sair".equals(line = scanner.nextLine())) {
+            while (true) {
+                var line = scanner.nextLine();
+                if ("sair".equals(line)) {
+                    break;
+                }
                 writer.write(line);
                 writer.newLine();
             }
