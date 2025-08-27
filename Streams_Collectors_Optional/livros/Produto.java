@@ -1,8 +1,12 @@
+import java.util.Locale;
+
 public class Produto {
     private int codigo;
     private String nome;
     private CategoriaProduto categoria;
     private double preco;
+
+    public static final Locale LOCALE = Locale.of("pt", "BR");
 
     public Produto(int codigo, String nome, CategoriaProduto categoria, double preco) {
         this.codigo = codigo;
@@ -29,6 +33,6 @@ public class Produto {
 
     @Override
     public String toString() {
-        return String.format("[%d] %s %s R$ %.2f", codigo, nome, categoria, preco);
+        return String.format(LOCALE, "[%d] %s %s R$ %.2f", codigo, nome, categoria, preco);
     }
 }
