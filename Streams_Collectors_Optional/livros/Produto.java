@@ -6,7 +6,7 @@ public class Produto {
     private CategoriaProduto categoria;
     private double preco;
 
-    public static final Locale LOCALE = Locale.of("pt", "BR");
+    public static final Locale LOCALE = new Locale("pt", "BR");
 
     public Produto(int codigo, String nome, CategoriaProduto categoria, double preco) {
         this.codigo = codigo;
