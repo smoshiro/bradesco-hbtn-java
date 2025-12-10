@@ -11,7 +11,7 @@ public class SistemaFilas {
         for (var t : threads) {
             t.start();
         }
-        Thread.sleep(20_000);
+        Thread.sleep(20000);
         System.exit(0);
     }
 }
