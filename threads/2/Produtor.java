@@ -1,17 +1,25 @@
+import java.util.Random;
+
 public class Produtor extends Thread {
     private final int id;
     private final Fila fila;
+    private final Random generator;
+    private final int min;
+    private final int max;
 
-    public Produtor(int id, Fila fila) {
+    public Produtor(int id, Fila fila, int min, int max) {
         this.id = id;
         this.fila = fila;
+        this.generator = new Random();
+        this.min = min;
+        this.max = max;
     }
 
     @Override
     public void run() {
         try {
             while (true) {
-                var item = (int) (100.0 * Math.random() / Math.nextDown(1.0));
+                var item = generateItem();
                 fila.adicionar(item);
                 System.out.printf("Produtor %d produziu: %d\n", id, item);
                 Thread.sleep(1000);
@@ -19,5 +27,9 @@ public class Produtor extends Thread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    protected int generateItem() {
+        return generator.nextInt(max - min + 1) + min;
     }
 }
